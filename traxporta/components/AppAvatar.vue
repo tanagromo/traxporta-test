@@ -27,10 +27,6 @@
 export default {
   name: 'AppAvatar',
   props: {
-    large: {
-      type: Boolean,
-      default: false
-    },
     big: {
       type: Boolean,
       default: false
@@ -72,18 +68,8 @@ export default {
         .join('')
         .toUpperCase()
     },
-    size () {
-      return [
-        (this.large) ? `avatar--large avatar-${this.abbreviationName[0]}` : '',
-        (this.big) ? `avatar--big avatar-${this.abbreviationName[0]}` : '',
-        (this.medium) ? `avatar--medium avatar-${this.abbreviationName[0]}` : '',
-        (this.small) ? `avatar--small avatar-${this.abbreviationName[0]}` : '',
-        (this.tiny) ? `avatar--tiny avatar-${this.abbreviationName[0]}` : ''
-      ]
-    },
     styles () {
       return [
-        (this.large) ? `avatar--large avatar-${this.abbreviationName[0]}` : '',
         (this.big) ? `avatar--big avatar-${this.abbreviationName[0]}` : '',
         (this.medium) ? `avatar--medium avatar-${this.abbreviationName[0]}` : '',
         (this.small) ? `avatar--small avatar-${this.abbreviationName[0]}` : '',
@@ -121,26 +107,19 @@ export default {
     }
   }
 
-  &--large {
-    width: 96px;
-    height: 96px;
-    font-size: 24px;
-    border-radius: 80px;
-  }
-
   &--big {
     width: 80px;
     height: 80px;
     font-size: 24px;
-    border-radius: 80px;
+    border-radius: 8px;
   }
 
   &--medium {
     width: 40px;
     height: 40px;
     font-size: 18px;
-    background: $grey;
-    border-radius: 50%;
+    background: #e3e5e9;
+    border-radius: 8px;
   }
 
   &--small {
@@ -148,7 +127,7 @@ export default {
     height: 32px;
     font-size: 12px;
     background: #e3e5e9;
-    border-radius: 50%;
+    border-radius: 8px;
   }
 
   &--tiny {
@@ -156,7 +135,7 @@ export default {
     height: 24px;
     font-size: 12px;
     background: #e3e5e9;
-    border-radius: 50%;
+    border-radius: 8px;
   }
 }
 
@@ -176,7 +155,7 @@ export default {
   background: #ff7474;
 }
 
-.avatar-C,
+.avatar-W,
 .avatar-I,
 .avatar-Ñ,
 .avatar-T,
@@ -186,14 +165,14 @@ export default {
 
 .avatar-D,
 .avatar-J,
-.avatar-O,
+.avatar-P,
 .avatar-U {
   background: #ce54eb;
 }
 
 .avatar-E,
 .avatar-K,
-.avatar-P,
+.avatar-O,
 .avatar-V {
   background: #ff5151;
 }
@@ -201,7 +180,7 @@ export default {
 .avatar-F,
 .avatar-L,
 .avatar-Q,
-.avatar-W {
+.avatar-C {
   background: #ffb500;
 }
 </style>
