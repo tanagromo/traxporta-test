@@ -1,2 +1,0 @@
-# traxporta-test
-frontend challenge
