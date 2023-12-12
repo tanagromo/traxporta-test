@@ -1,7 +1,7 @@
 <template>
     <div
       class="h-auto border border-tgray-300
-      rounded-3xl pt-8 w-5/12 m-auto"
+      rounded-3xl pt-8 w-11/12 md:w-5/12 m-auto"
       >
         <h1
           class="text-center text-xl font-medium"
@@ -12,7 +12,8 @@
           <input
             ref="input"
             v-model="searchQuery"
-            class="mt-5 px-5 py-2 border border-tgray-300 rounded-full w-7/12 placeholder:text-xs"
+            class="mt-5 px-5 py-2 border border-tgray-300
+            rounded-full w-10/12 md:w-7/12 placeholder:text-xs"
             placeholder="Search"
             name="user"
             :autocomplete="false"
@@ -23,38 +24,46 @@
           class="mt-8"
           >
           <div
-            class="px-8 pb-3 grid grid-cols-9 gap-4
+            class="px-2 md:px-8 pb-3 grid grid-cols-7 md:grid-cols-9 gap-2 md:gap-4
             text-xs text-tgray-500 border-b border-tgray-300"
             >
-            <p class="col-start-2 col-span-4">
+            <p class="col-start-2 md:col-start-2 col-span-3 md:col-span-4">
               Name
             </p>
-            <p class="col-span-4">
+            <p class="col-span-3 md:col-span-4">
               E-mail
             </p>
           </div>
           <div
             v-for="(user, index) in filteredUsers"
             :key="user.id"
-            class="px-8 py-4 grid grid-cols-9 gap-4"
+            class="px-2 md:px-8 py-4 grid grid-cols-7 md:grid-cols-9 gap-2 md:gap-4"
             :class="{'border-b border-tgray-300': index !== filteredUsers.length - 1}"
             >
               <AppAvatar
                 medium
                 :user="user"
                 />
-              <p
-                class="col-start-2 col-span-4 text-sm
-                       font-medium flex items-center"
+              <div
+                class="col-start-2 col-span-3 md:col-span-4 text-xs md:text-sm
+                       font-medium flex items-center whitespace-nowrap"
                 >
-                {{ user.name }}
-              </p>
-              <p
-                class="col-span-4 text-sm
-                       font-medium flex items-center"
+                <p
+                  class="w-11/12 md:w-full text-ellipsis overflow-hidden"
+                  >
+                  {{ user.name }}
+                </p>
+              </div>
+              <div
+                class="col-span-3 md:col-span-4 text-xs md:text-sm
+                       font-medium flex items-center whitespace-nowrap"
                 >
-                {{ user.email }}
-              </p>
+                <p
+                  class="w-11/12 md:w-full text-ellipsis overflow-hidden"
+                  >
+                  {{ user.email }}
+                </p>
+              </div>
           </div>
         </div>
     </div>

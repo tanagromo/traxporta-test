@@ -1,7 +1,6 @@
 <template>
-  <div class="h-screen">
+  <div>
     <AppHeader />
     <slot />
-    <AppFooter />
   </div>
 </template>

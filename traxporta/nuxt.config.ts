@@ -11,6 +11,9 @@ export default defineNuxtConfig({
   alias: {
     '@': '~/'
   },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: [
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss'
+  ],
   css: ['~/assets/scss/main.scss']
 })
